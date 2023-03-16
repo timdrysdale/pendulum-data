@@ -46,4 +46,34 @@ plt.legend()
 plt.savefig("../img/pend00-run00-angle-with-calculated.png", dpi=300)
 
  
+plt.close()
+
+df = pd.read_csv('../data/pend00-run07.csv')
+
+t = df.loc[:,"Time/s"]
+theta = df.loc[:,"Angle/rad"]
+
+plt.plot(t,theta,"b-",label="measured")
+
+plt.xlabel("Time/s")
+plt.ylabel("Angle/rad")
+
+plt.savefig("../img/pend00-run07-angle.png", dpi=300)
+
+plt.close()
+
+plt.figure()
+
+a = 40
+b = 110
+
+plt.plot(t[a:b],theta[a:b],"b-",label="measured")
+
+plt.xlabel("Time/s")
+plt.ylabel("Angle/rad")
+
+plt.savefig("../img/pend00-run07-angle-startup.png", dpi=300)
+
+
+
 
